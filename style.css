@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("pozadie.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+}
+html{
+    margin: 40px;
+    padding: 0;
+}
+.hlavnyNadpis{
+    font-family: "Comic Sans MS", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: wheat;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.podnadpis{
+    text-align: center;
+    font-family: 'Lobster', cursive, serif;
+    color: wheat;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.kontajnerForm{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(107, 107, 107, 0.7);
+    padding: 3vw;
+    border-radius: 1vw;
+    border-style: outset;
+    border-width: 7px;
+    border-color: coral;  
+}
+label{
+    color: rgb(250, 237, 214);
+    font-weight: bold;
+    font-family: 'Lobster', cursive, serif;
+    font-size: 18px;
+}
+.requiredStar{
+    color: rgb(153, 15, 15);
+}
+small{
+    color: rgb(141, 6, 6);
+    font-size: 15px;
+    font-weight: bolder;
+}
+#submitButton {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: #45a049;
+    color: rgb(250, 237, 214);
+    font-weight: bold;
+    font-family: 'Lobster', cursive, serif;
+    font-size: 24px;
+}
+.radio{
+    text-align: center;
+}
+.hiddenNo{
+    margin-left: auto;
+    margin-right: auto;
+}
+#hiddenYes{
+    margin-left: auto;
+    margin-right: auto;
+}
+#selectConf1{
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#selectConf2{
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#selectConf3{
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.radio{
+    text-align: center;
+}
+.hiddenCheckForm{
+    text-align: center;
+}
+#otherText{
+    margin-left: auto;
+    margin-right: auto;
+}

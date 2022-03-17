@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular</title>
+</head>
+<body>
+  <div class="kontajnerForm">
+    <form action="mailto:" method="POST" enctype="text/plain">
+      <div> 
+        <h1 class="hlavnyNadpis">Osobné údaje</h1>
+      </div>
+      <input type = "hidden" id="hidden_name" name="skryte meno" value="Patrik Istok">
+
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="name">Meno: <span class="requiredStar">*</span></label>
+          <input type="text" name="meno" class="form-control" id="name" placeholder="Zadaj meno" oninput="validName() & validSubmit()">
+          <small class="error" id="errorName">Nemôže byť prázdne</small>
+        </div>
+        <div class="col-md-6">
+          <label for="surname">Priezvisko: <span class="requiredStar">*</span></label>
+          <input type="text" name="priezvisko" class="form-control" id="surname" placeholder="Zadaj priezvisko" oninput="validSurname() & validSubmit()">
+          <small class="error" id="errorSurname">Nemôže byť prázdne</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="birthDate">Dátum narodenia: <span class="requiredStar">*</span></label>
+          <input type="date" name="datum narodenia" class="form-control" id="birthDate" oninput="validBirthDate()" onchange="validAge() & validSubmit()">
+          <small class="error" id="errorBirthDate">Neplatný dátum narodenia</small>
+        </div>
+        <div class="col-md-6">
+          <label for="age">Vek: <span class="requiredStar">*</span></label>
+          <input type="number" name="vek" class="form-control" id="age" placeholder="Zadaj vek" oninput="validAge() & validSubmit()">
+          <small class="error" id="errorAge">Nezhodný s dátumom narodenia</small>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
+          <label for="email">Email: <span class="requiredStar">*</span></label>
+          <input type="text" name="email" class="form-control" id="email" placeholder="Zadaj email" oninput="validEmail() & validSubmit()">
+          <small class="error" id="errorEmail">Neplatný formát emailu</small>
+        </div>
+        <div class="col-md-6">
+          <label for="job">Zamestnanie: <span class="requiredStar">*</span></label>
+          <input type="text" name="zamestnanie" class="form-control" id="job" placeholder="Zadaj zamestnanie" oninput="validJob() & validSubmit()">
+          <small class="error" id="errorJob">Nemôže byť prázdne</small>
+        </div>
+      </div>
+      <div>
+        <h1 class="hlavnyNadpis">Notebook</h1>
+        <h2 class="podnadpis">Vlastníte notebook?</h2>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6 radio">
+          <input type="radio" name="notebook" id="notebookYes" value="yes" onclick="showHidden(value);">
+          <label for="notebookYes">Áno</label>
+        </div>
+        <div class="col-md-6 radio">
+          <input type="radio" name="notebook" id="notebookNo" value="no" onclick="showHidden(value);">
+          <label for="notebookNo">Nie</label>
+        </div>
+        <div class="hiddenNo">
+          <div class="col-md">
+            <textarea name="dovod nevlastnenia notebooku" class="form-control" id="textareaHiddenNo" cols="60" rows="8" placeholder="Prečo nevlastníte notebook?"></textarea>
+           </div>
+        </div>
+      </div>
+      <div id="hiddenYes">
+        <h2 class="podnadpis">Notebook akej značky vlastníte?</h2>
+        <div class="form-check row hiddenCheckForm">
+          <div class="col-md form-check hiddenCheckForm">
+            <input type="checkbox" name="moznost acer" class="form-check-input" id="checkOption1">
+            <label for="checkOption1">Acer</label>
+          </div>
+          <div class="col-md form-check hiddenCheckForm">
+            <input type="checkbox" name="moznost asus" class="form-check-input" id="checkOption2">
+            <label for="checkOption2">Asus</label>
+          </div>
+          <div class="col-md form-check hiddenCheckForm">
+            <input type="checkbox" name="moznost lenovo" class="form-check-input" id="checkOption3">
+            <label for="checkOption3">Lenovo</label>
+          </div>
+          <div class="col-md form-check hiddenCheckForm">
+            <input type="checkbox" name="moznost ine" class="form-check-input" id="checkOption4" oninput="showTextArea()">
+            <label for="checkOption4">Iný</label>
+            <textarea name="ine text" id="otherText" cols="40" rows="1"></textarea>
+          </div>
+        </div>
+        <h2 class="podnadpis">Vaša konfigurácia: </h2>
+        <div class="form-group" id="tripleSelect">
+          <div class="col-md">
+            <select name="vyrobca" class="form-control mb-3" id="selectConf1">
+              <option value="acer">Acer</option>
+              <option value="lenovo">Lenovo</option>
+            </select>
+          </div>
+          <div class="col-md">
+            <select name="rada" class="form-control mb-3" id="selectConf2">
+            </select>
+          </div>  
+          <div class="col-md">
+            <select name="model" class="form-control mb-3" id="selectConf3">
+            </select>
+          </div>  
+        </div>
+      </div>
+      <div class="form-group row">
+        <button type="submit" class="btn submit-button" id="submitButton" value="Submit">Odošli</button>
+      </div>
+    </form>
+  </div>
+  <script src="javascript.js"></script>  
+</body>
+</html>
